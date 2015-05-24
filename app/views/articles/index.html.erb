@@ -12,6 +12,9 @@
   <tbody>
     <% @articles.each do |article| %>
       <tr>
+        <% if article.image.url %>
+          <td><%= image_tag(article.image.url(:thumb)) %>  </td>
+        <% end %>
         <td><%= article.title %></td>
         <td><%= article.content %></td>
         <td><%= link_to 'Show', article %></td>
